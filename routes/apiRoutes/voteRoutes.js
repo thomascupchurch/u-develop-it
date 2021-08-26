@@ -27,4 +27,20 @@ db.query(sql, params, (err, result) => {
 });
 });
 
+router.get('/votes', (req, res) => {
+    const sql = `SELECT * FROM votes`;
+    const params = [req.params.id];
+    
+    db.query(sql, params, (err, row) => {
+    if (err) {
+        res.status(500).json({ error: err.message });
+        return;
+    }
+    res.json({
+        message: 'success',
+        data: row
+    });
+});
+});
+
 module.exports = router;
