@@ -1,7 +1,11 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2')
+
+const special = console.log('export PATH="${PATH}:/usr/local/mysql/bin/"');
+
 
 // Connect to database
 const db = mysql.createConnection(
+    
     {
         host: 'localhost',
         // Your MySQL username,
